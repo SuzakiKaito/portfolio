@@ -1,8 +1,109 @@
+@charset "UTF-8";
 html {
   font-size: 62.5%;
 }
 
-body {
-  background: rgb(255, 181, 45);
-  filter: sepia(20);
+.stars {
+  position: relative;
+  width: 100%; /* 星空の横幅 */
+  height: 2000px; /* 星空の縦幅 */
+  background-image: linear-gradient(0deg, #47edd1, #064d76, #0a172e); /* 星空の背景色 */
+}
+.stars .Star {
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  box-shadow: 10px 10px 5px 5px #1ef273;
+}
+
+.mouseStalker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: rgba(30, 242, 115, 0.5);
+  border-radius: 50%;
+  transform: translate(0, 0);
+  transition: transform 0.3s;
+  transition-timing-function: ease-out;
+  z-index: 999;
+}
+
+/* 星のスタイル */
+.star {
+  position: absolute;
+  display: block;
+  background-color: #fff; /* 星の色 */
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(157, 226, 185, 0.2); /* 星の影 */
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+/* 星がキラキラ光るアニメーション */
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.contair {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+}
+header .flex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .flex li {
+  width: 120px;
+  text-align: center;
+  line-height: 100px;
+  list-style: none;
+  position: relative;
+  font-size: 2.4rem;
+}
+header .flex li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+header .flex li a:hover::before {
+  width: 90%;
+}
+header .flex li a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 60px;
+  width: 10%;
+  margin: 0 10px 0 0;
+  border: 4px solid #1ef273;
+  transition: all 0.4s;
+}
+header .flex li a span {
+  font-weight: bold;
+}
+header .flex .bold {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: bold;
 }
