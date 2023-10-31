@@ -1,14 +1,16 @@
 html{
   // background-color: tomato;
   font-size: 62.5%;
+  width: 1680px;
 }
 body{
+  width: 1680px;
   // background: rgb(255, 181, 45);
 }
 
 .stars {
   position: relative;
-  width: 100%; /* 星空の横幅 */
+  width: 1680px; /* 星空の横幅 */
   height: 2000px; /* 星空の縦幅 */
   background-image: linear-gradient(0deg, #47edd1, #064d76, #0a172e); /* 星空の背景色 */
   // overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */
@@ -60,57 +62,109 @@ body{
     transform: scale(1);
   }
 }
-.contair{
+.container{
+  width: 1560px;
   position: absolute;
   top: 0;
   left: 0;
 }
 header{
-  width: 100%;
-  height: 100px;
+  width: 500px;
+  height: 50px;
   position: fixed;
-  .flex{
+  top: 20px;
+  right: 100px;
+  background: #fff;
+  z-index: 100;
+  // left: 40%;
+  // margin: 0 auto;
+  border-radius: 10px;
+  .content{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    // left: 50%;
     li{
-      width: 120px;
-      // list-style: none;
+      width: 90px;
+      height: 40px;
+      background: #03334f;
+      color: #fff;
       text-align: center;
-      line-height: 100px;
       list-style: none;
-      position: relative;
-      font-size: 2.4rem;
+      margin-top: 5px;
+      border-radius: 10px;
+      line-height: 40px;
       a{
+        display: block;
         width: 100%;
         height: 100%;
-        display: block;
-        text-decoration: none;
         color: #fff;
-        &:hover::before{
-          width: 90%;
-        }
-        &::before{
-          content: "";
-          display: block;
-          position: absolute;
-          top:60px;
-          width: 10%;
-          // text-align: center;
-          margin: 0 10px 0 0;
-          border:4px solid #1ef273;
-          transition: all .4s;
-
-        }
-        span{
-          font-weight: bold;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+main{
+  width: 100%;
+  margin: 0 auto;
+}
+h2{
+  color: #eee;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 80px;
+}
+.mySelf{
+  width: 100%;
+  height: 600px;
+  margin-top: 30px;
+  // display: flex;
+  // justify-content: center;
+  // flex-flow: column;
+  .content{
+    width: 850px;
+    height: 530px;
+    margin: 30px auto 0;
+    // background: #999;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    .box{
+      width: 730px;
+      height: 430px;
+      background: #ddd;
+      figure{
+        width: 730px;
+        height: 430px;
+        img{
+          width: 100%;
+          height: 100%;
         }
       }
     }
-    .bold{
-      color: #fff;
-      font-size: 2.8rem;
-      font-weight: bold;
+    .more{
+      width: 80px;
+      height: 240px;
+      background: #ddd;
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      h3{
+        font-size: 3rem;
+        text-align: center;
+        line-height: 80px;
+      }
+    }
+    .detail{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      width: 300px;
+      height: 220px;
+      background: rgb(255, 255, 255);
+      border: 1px solid #000;
     }
   }
 }
