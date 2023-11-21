@@ -12,7 +12,7 @@ body {
   position: relative;
   width: 100%; /* 星空の横幅 */
   height: 4000px; /* 星空の縦幅 */
-  background-image: linear-gradient(0deg, #47edd1, #064d76, #0a172e); /* 星空の背景色 */
+  background-image: linear-gradient(0deg, #47edd1, #42a2cc, #0d2c90, rgb(36, 25, 139), #0a172e); /* 星空の背景色 */
 }
 .stars .Star {
   position: absolute;
@@ -71,8 +71,8 @@ header {
   width: 500px;
   height: 50px;
   position: fixed;
-  top: 20px;
-  right: 100px;
+  top: 40px;
+  right: 80px;
   background: #fff;
   z-index: 100;
   border-radius: 10px;
@@ -101,6 +101,11 @@ header .content li a {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.5rem;
+  transition: ease-in-out 0.3s;
+}
+header .content li :hover {
+  color: #47edd1;
+  text-shadow: 0 0 10px #47edd1, 0 0 15px #fff;
 }
 
 main {
@@ -114,6 +119,7 @@ h2 {
   text-align: center;
   margin-top: 80px;
   text-shadow: 0 0 10px #47edd1, 0 0 15px #fff;
+  position: relative;
 }
 
 .mySelf {
@@ -151,12 +157,30 @@ h2 {
   writing-mode: vertical-rl;
   position: relative;
 }
+.mySelf .content .more ::before {
+  content: " ";
+  position: absolute;
+  top: -80px;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: rgba(52, 209, 193, 0.7);
+  transition: all 0.3s;
+}
+.mySelf .content .more :hover::before {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
 .mySelf .content .more h3 {
   font-size: 3rem;
-  text-align: center;
+  width: 80px;
+  height: 240px;
+  text-align: left;
   line-height: 80px;
   color: #3d3d3d;
   text-shadow: none;
+  position: absolute;
 }
 .mySelf .content .detail {
   position: absolute;
@@ -169,6 +193,14 @@ h2 {
   border: 1px solid #000;
 }
 
+@keyframes shine {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 h3 {
   font-size: 4rem;
   color: #fff;
@@ -195,7 +227,7 @@ h3 {
 .skill {
   width: 100%;
   height: 400px;
-  background: #03507d;
+  background: #013655;
   box-shadow: rgba(52, 209, 193, 0.9) 0px 0px 70px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .skill .content {
